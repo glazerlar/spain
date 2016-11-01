@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>D&oacute;nde ver NatGeo</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				// Move logos above channel description on mobile
+				$(window).resize(function() {
+				    if( $(this).width() <= 599 ) {
+						$("#row-spain .below").insertBefore("#row-spain .above");
+				    }
+				});
+
+				// When clicking .slider, below will happen.
+				$('#row-spain .slider').on('click', function(e) { 
+					// store ".img-wrap > img" DOM elm (as a jQuery format) in $img variable.
+					var $img = $(this).find('.img-wrap > img'); //<img src="img/logos/canal.png" alt="Canal" title="Canal" data-ch1="86" data-ch2="87" data-link="www.canalsat.fr/pid2220-chaine.html?chaine=561" />
+					
+					// Assign attributes for .ch-logo
+					$('#row-spain').find('.ch-logo').attr('src',$img.attr('src'));
+					$('#row-spain').find('.ch-logo').attr('alt',$img.attr('alt'));
+					$('#row-spain').find('.ch-logo').attr('title',$img.attr('title'));
+
+					$('#row-spain').find('.ch1').html('National Geographic<br />'+$img.attr('data-ch1'));
+					$('#row-spain').find('.ch2').html('Nat Geo Wild<br />'+$img.attr('data-ch2'));
+					$('#row-spain').find('.btn').attr('href','http://'+$img.attr('data-link'));
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<header>
+			<img src="img/header.jpg" />
+			<div class="top-hat">
+			</div>
+			<div class="white-bg">
+			</div>
+		</header>
+		<div class="content-wrap">
+			<div class="top-content">
+				<h2>D&oacute;nde ver NatGeo</h2>
+				<img src="img/NGlogo.png" alt="National Geographic" title="National Geographic" />
+				<img src="img/natGeoWILD.png" alt="Nat Geo Wild" title="Nat Geo Wild" />
+				<p>National Geographic Channel y Nat Geo WILD est&aacute;n disponibles en las siguientes plataformas.</p>
+				<p class="small-text">Elije tu operador:</p>
+			</div>
+			<div class="row-wrap">
+				<div id="row-spain" class="row clearfix">
+					<div class="one-third above">
+						<div class="one-third-wrapper">
+							<div class="img-height">
+								<div class="img-center">
+									<img class="ch-logo" src="img/logos/movistar.png" alt="Movistar" title="Movistar" /> <!-- src, alt, title -->
+								</div>
+							</div>
+							<p class="small-text ch1">National Geographic<br />70</p> <!-- number -->
+							<p class="small-text ch2">Nat Geo Wild<br />71</p> <!-- number -->
+							<a class="btn" href="http://www.movistar.es/particulares/ver-tv/contenidos/">Visita la p&aacute;ginade tu operador</a> <!-- link -->
+						</div>
+					</div>
+					<div class="two-thirds clearfix below last">
+						<a href="javascript:void(0)" class="slider">
+							<div class="one-third">
+								<div class="img-wrap">
+									<img src="img/logos/movistar.png" alt="Movistar" title="Movistar" data-ch1="70" data-ch2="71" data-link="www.movistar.es/particulares/ver-tv/contenidos/" />
+								</div>
+							</div>
+						</a>
+						<a href="javascript:void(0)" class="slider">
+							<div class="one-third">
+								<div class="img-wrap">
+									<img src="img/logos/vodafone.png" alt="Vodafone" title="Vodafone" data-ch1="98" data-ch2="97" data-link="www.vodafone.es/c/particulares/es/descubre-vodafone/te-ofrecemos/television-inteligente/" />
+								</div>
+							</div>
+						</a>
+						<a href="javascript:void(0)" class="slider">
+							<div class="one-third last">
+								<div class="img-wrap">
+									<img src="img/logos/orange.png" alt="Orange" title="Orange" data-ch1="27" data-ch2="28" data-link="descubre.orange.es/orangetv/" />
+								</div>
+							</div>
+						</a>
+						<a href="javascript:void(0)" class="slider">
+							<div class="one-third">
+								<div class="img-wrap">
+									<img src="img/logos/euskaltel.png" alt="Euskaltel" title="Euskaltel" data-ch1="34" data-ch2="39" data-link="www.euskaltel.com/CanalOnline/particulares/television/" />
+								</div>
+							</div>
+						</a>
+						<a href="javascript:void(0)" class="slider">
+							<div class="one-third">
+								<div class="img-wrap">
+									<img src="img/logos/rcable.png" alt="R Cable" title="R Cable" data-ch1="50" data-ch2="55" data-link="www.mundo-r.com/es/combos" />
+								</div>
+							</div>
+						</a>
+						<a href="javascript:void(0)" class="slider">
+							<div class="one-third last">
+								<div class="img-wrap">
+									<img src="img/logos/telecable.png" alt="Telecable" title="Telecable" data-ch1="52" data-ch2="53" data-link="web.telecable.es/portal.do?IDM=1&NM=2#&panel1-1" />
+								</div>
+							</div>
+						</a>
+						<a href="javascript:void(0)" class="slider">
+							<div class="one-third last">
+								<div class="img-wrap">
+									<img src="img/logos/totalchannel.png" alt="TotalChannel" title="otalChannel" data-ch1="" data-ch2="" data-link="www.totalchannel.com/" />
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<img src="img/footer.jpg" />
+		</footer>
+	</body>
+</html>
