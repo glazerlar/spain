@@ -27,6 +27,9 @@
 					$('#row-spain').find('.ch2').html('Nat Geo Wild<br />'+$img.attr('data-ch2'));
 					$('#row-spain').find('.btn').attr('href','http://'+$img.attr('data-link'));
 				});
+				$('.slider.total-channel').on('click', function(e) { 
+					$(".ch2").hide();
+				});
 			});
 		</script>
 	</head>
@@ -103,10 +106,10 @@
 								</div>
 							</div>
 						</a>
-						<a href="javascript:void(0)" class="slider">
+						<a href="javascript:void(0)" class="slider total-channel">
 							<div class="one-third last">
 								<div class="img-wrap">
-									<img src="img/logos/totalchannel.png" alt="TotalChannel" title="otalChannel" data-ch1="" data-ch2="" data-link="www.totalchannel.com/" />
+									<img src="img/logos/totalchannel.png" alt="TotalChannel" title="TotalChannel" data-ch1="Disponible en multiplataforma" data-ch2="" data-link="www.totalchannel.com/" />
 								</div>
 							</div>
 						</a>
